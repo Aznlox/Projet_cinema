@@ -7,10 +7,10 @@
     <title>Inscription</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../lib/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../lib/css/style.css">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" name="submit" class="form-submit submit" value="S'inscrire"/>
-                        <a href="#" class="submit-link submit">Connexion</a>
+                        <a href="form_connexion" class="submit-link submit">Connexion</a>
                     </div>
                 </form>
             </div>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../lib/vendor/jquery/jquery.min.js"></script>
+    <script src="../lib/js/main.js"></script>
 </body>
 </html>
