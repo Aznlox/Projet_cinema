@@ -1,6 +1,6 @@
 <?php
 //Manager
-require_once('E:\wamp64\www\git\Projet_cinema\class\modele/User.php');
+require_once(__DIR__.'/../modele/User.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -61,13 +61,13 @@ class Manager_User{
   }*/
 
   //Connexion
-  public function login(User $login){
-    $bdd = new PDO('mysql:host=localhost;dbname=projet_restoration','root','');
-    $req = $bdd->prepare('SELECT * from compte where mail = ? AND mdp = ?');
-    $req->execute(array($login->getMail(), SHA1($login->getMdp())));
+  public function connexion(User $connexion){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('SELECT * from compte where email = ? AND mdp = ?');
+    $req->execute(array($connexion->getEmail(), SHA1($connexion->getMdp())));
     $donnee = $req->fetch();
     if ($donnee){
-      $_SESSION['mail'] = $donnee['mail'];
+      $_SESSION['email'] = $donnee['email'];
       $_SESSION['prenom'] = $donnee['prenom'];
       $_SESSION['nom'] = $donnee['nom'];
       if (!is_null($donnee['role'])){
@@ -76,8 +76,8 @@ class Manager_User{
       header('location: ../inde.php');
     }
     else{
-      $_SESSION['erreur_login'] = "Mail ou mdp erroné";
-      header('location: ../view/connexion.php');
+      $_SESSION['erreur_login'] = "Email ou mdp erroné";
+      header('location: ../view/form_connexion.php');
     }
   }
 }

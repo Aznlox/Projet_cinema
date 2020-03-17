@@ -18,7 +18,7 @@
 
         <div class="container">
             <div class="signup-content">
-                <form method="POST" action="../traitement/cible_inscription.php" class="signup-form">
+                <form method="POST" action="../traitement/cible_connexion.php" class="signup-form">
                     <h2>Connexion</h2>
                     <br><br>
                     <div class="form-group">
@@ -31,7 +31,7 @@
                     <br><br>
                     <div class="form-group">
                         <input type="submit" name="submit" class="form-submit submit" value="Valider"/>
-                        <a href="form_inscription" class="submit-link submit">Inscription</a>
+                        <a href="form_inscription.php" class="submit-link submit">Inscription</a>
                     </div>
                     <br><br>
                 </form>

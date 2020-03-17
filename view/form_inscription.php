@@ -39,7 +39,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" name="submit" class="form-submit submit" value="S'inscrire"/>
-                        <a href="form_connexion" class="submit-link submit">Connexion</a>
+                        <a href="form_connexion.php" class="submit-link submit">Connexion</a>
                     </div>
                 </form>
             </div>
