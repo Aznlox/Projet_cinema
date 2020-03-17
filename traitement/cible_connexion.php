@@ -9,7 +9,7 @@ session_start();
 $donnee = new User(['email'=>$_POST['email'],
                     'mdp'=>$_POST['mdp']]);
 
-$login = new Manager;
-$login->login($donnee);
+$connexion = new Manager_User;
+$connexion->connexion($donnee);
 
 ?>

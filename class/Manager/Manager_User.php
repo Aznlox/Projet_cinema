@@ -70,10 +70,10 @@ class Manager_User{
       $_SESSION['email'] = $donnee['email'];
       $_SESSION['prenom'] = $donnee['prenom'];
       $_SESSION['nom'] = $donnee['nom'];
-      if (!is_null($donnee['role'])){
+      /*if (!is_null($donnee['role'])){
         $_SESSION['role'] = $donnee['role'];
-      }
-      header('location: ../inde.php');
+      }*/
+      header('location: ../index1.php');
     }
     else{
       $_SESSION['erreur_login'] = "Email ou mdp erroné";
