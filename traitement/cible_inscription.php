@@ -12,7 +12,7 @@
   else{
     $inscription = new User(['nom'=>$_POST['nom'],
                     'prenom'=>$_POST['prenom'],
-                    'mail'=>$_POST['mail'],
+                    'email'=>$_POST['email'],
                     'mdp'=>$_POST['mdp']]);
     $inscrit = new Manager_User;
     $inscrit->envoiebdd($inscription);

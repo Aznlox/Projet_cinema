@@ -4,7 +4,7 @@ class User{
 
   private $_nom;
   private $_prenom;
-  private $_mail;
+  private $_email;
   private $_mdp;
 
   public function __construct(array $donnees){
@@ -29,8 +29,8 @@ class User{
   public function setPrenom($prenom){
     $this->_prenom = $prenom;
   }
-  public function setMail($mail){
-    $this->_mail = $mail;
+  public function setEmail($email){
+    $this->_email = $email;
   }
   public function setMdp($mdp){
     $this->_mdp = $mdp;
@@ -38,7 +38,7 @@ class User{
   //getter
   public function getNom(){return $this->_nom;}
   public function getPrenom(){return $this->_prenom;}
-  public function getMail(){return $this->_mail;}
+  public function getMail(){return $this->_email;}
   public function getMdp(){return $this->_mdp;}
 }
 ?>

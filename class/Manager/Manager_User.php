@@ -1,6 +1,6 @@
 <?php
 //Manager
-require_once('../modele/User.php');
+require_once('E:\wamp64\www\git\Projet_cinema\class\modele/User.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -8,13 +8,13 @@ class Manager_User{
 
   private $_nom;
   private $_prenom;
-  private $_mail;
+  private $_email;
   private $_mdp;
 
 //Inscription dans la bdd
   public function envoiebdd(User $inscription){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
-    $req = $bdd->prepare('SELECT * FROM compte WHERE mail = :mail');
+    $req = $bdd->prepare('SELECT * FROM compte WHERE email = :email');
     $req->execute(array('email'=>$inscription->getMail()));
     $donnee = $req->fetch();
     if($donnee)
@@ -23,7 +23,7 @@ class Manager_User{
       header('Location: ../view/form_inscription.php');
     }
     else{
-      $req = $bdd->prepare('INSERT into compte (nom, prenom, mail, mdp) value(?,?,?,?)');
+      $req = $bdd->prepare('INSERT into compte (nom, prenom, email, mdp) value(?,?,?,?)');
       $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getMail(), SHA1($inscription->getMdp())));
       header('Location: ../view/confirm_inscription.php');
     }
