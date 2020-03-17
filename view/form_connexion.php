@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inscription</title>
+    <title>Connexion</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../lib/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -19,26 +19,22 @@
         <div class="container">
             <div class="signup-content">
                 <form method="POST" id="signup-form" class="signup-form">
-                    <h2>Inscription </h2>
+                    <h2>Connexion</h2>
                     <br><br>
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="nom"  placeholder="Nom"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="prenom"  placeholder="Prenom"/>
-                    </div>
                     <div class="form-group">
                         <input type="email" class="form-input" name="email"  placeholder="Email"/>
                     </div>
+                    <br>
                     <div class="form-group">
                         <input type="text" class="form-input" name="mdp"  placeholder="Mot de passe"/>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
-                    <br>
+                    <br><br>
                     <div class="form-group">
-                        <input type="submit" name="submit" class="form-submit submit" value="S'inscrire"/>
-                        <a href="form_connexion" class="submit-link submit">Connexion</a>
+                        <input type="submit" name="submit" class="form-submit submit" value="Valider"/>
+                        <a href="form_inscription" class="submit-link submit">Inscription</a>
                     </div>
+                    <br><br>
                 </form>
             </div>
         </div>
