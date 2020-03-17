@@ -18,7 +18,9 @@
 
         <div class="container">
             <div class="signup-content">
+
                 <form method="POST" action="../traitement/cible_inscription.php" class="signup-form">
+                  <br>
                     <h2>Inscription</h2>
 
                     <div class="form-group">
@@ -36,7 +38,7 @@
                     <div class="form-group">
                         <input type="password" class="form-input" name="confirmmdp"  placeholder="Retaper votre mot de passe"/>
                     </div>
-                    <br>
+
                     <div class="form-group">
                         <input type="submit" name="submit" class="form-submit submit" value="S'inscrire"/>
                         <a href="form_connexion.php" class="submit-link submit">Connexion</a>
