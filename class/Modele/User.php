@@ -38,7 +38,7 @@ class User{
   //getter
   public function getNom(){return $this->_nom;}
   public function getPrenom(){return $this->_prenom;}
-  public function getMail(){return $this->_email;}
+  public function getEmail(){return $this->_email;}
   public function getMdp(){return $this->_mdp;}
 }
 ?>

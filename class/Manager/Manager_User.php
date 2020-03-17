@@ -15,16 +15,16 @@ class Manager_User{
   public function envoiebdd(User $inscription){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('SELECT * FROM compte WHERE email = :email');
-    $req->execute(array('email'=>$inscription->getMail()));
+    $req->execute(array('email'=>$inscription->getEmail()));
     $donnee = $req->fetch();
     if($donnee)
     {
-      $_SESSION['erreur_inscr'] = "Le mail est déjà utilisé.";
+      $_SESSION['erreur_inscr'] = "L'email est déjà utilisé.";
       header('Location: ../view/form_inscription.php');
     }
     else{
       $req = $bdd->prepare('INSERT into compte (nom, prenom, email, mdp) value(?,?,?,?)');
-      $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getMail(), SHA1($inscription->getMdp())));
+      $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getEmail(), SHA1($inscription->getMdp())));
       header('Location: ../view/confirm_inscription.php');
     }
   }
