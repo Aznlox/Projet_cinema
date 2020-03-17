@@ -18,7 +18,7 @@
 
         <div class="container">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
+                <form method="POST" action="../traitement/cible_inscription.php" class="signup-form">
                     <h2>Connexion</h2>
                     <br><br>
                     <div class="form-group">
@@ -26,8 +26,7 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="mdp"  placeholder="Mot de passe"/>
-                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        <input type="password" class="form-input" name="mdp"  placeholder="Mot de passe"/>
                     </div>
                     <br><br>
                     <div class="form-group">

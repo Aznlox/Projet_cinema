@@ -1,10 +1,10 @@
 <?php
 //Manager
-require_once('user.php');
+require_once('../modele/User.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-class Manager{
+class Manager_User{
 
   private $_nom;
   private $_prenom;
@@ -14,20 +14,22 @@ class Manager{
 //Inscription dans la bdd
   public function envoiebdd(User $inscription){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
-    $req = $bdd->prepare('SELECT * FROM compte WHERE mail = :mail or identifiant = :identifiant ');
-    $req->execute(array('email'=>$inscription->getMail(), 'identifiant'=>$inscription->getIdentifiant()));
+    $req = $bdd->prepare('SELECT * FROM compte WHERE mail = :mail');
+    $req->execute(array('email'=>$inscription->getMail()));
     $donnee = $req->fetch();
     if($donnee)
     {
-      $_SESSION['erreur_inscr'] = "L'identifiant ou le mail est déjà utilisé.";
-      header('Location: ../view/inscription.php');
+      $_SESSION['erreur_inscr'] = "Le mail est déjà utilisé.";
+      header('Location: ../view/form_inscription.php');
     }
     else{
       $req = $bdd->prepare('INSERT into compte (nom, prenom, mail, mdp) value(?,?,?,?)');
-      $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getMail(), $inscription->getTel(), $inscription->getIdentifiant(), SHA1($inscription->getMdp())));
-
+      $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getMail(), SHA1($inscription->getMdp())));
+      header('Location: ../view/confirm_inscription.php');
+    }
+  }
       //Envoie de mail
-      require '../vendor/PHPMailer/PHPMailer/src/Exception.php';
+      /*require '../vendor/PHPMailer/PHPMailer/src/Exception.php';
       require '../vendor/PHPMailer/PHPMailer/src/PHPMailer.php';
       require '../vendor/PHPMailer/PHPMailer/src/SMTP.php';
 
@@ -56,7 +58,7 @@ class Manager{
 
       header('location: ../view/connexion.php');
     }
-  }
+  }*/
 
   //Connexion
   public function login(User $login){

@@ -18,9 +18,9 @@
 
         <div class="container">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
-                    <h2>Inscription </h2>
-                    <br><br>
+                <form method="POST" action="../traitement/cible_inscription.php" class="signup-form">
+                    <h2>Inscription</h2>
+
                     <div class="form-group">
                         <input type="text" class="form-input" name="nom"  placeholder="Nom"/>
                     </div>
@@ -31,8 +31,10 @@
                         <input type="email" class="form-input" name="email"  placeholder="Email"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="mdp"  placeholder="Mot de passe"/>
-                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        <input type="password" class="form-input" name="mdp"  placeholder="Mot de passe"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="confirmmdp"  placeholder="Retaper votre mot de passe"/>
                     </div>
                     <br>
                     <div class="form-group">
