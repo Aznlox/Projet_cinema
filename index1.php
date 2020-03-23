@@ -1,3 +1,4 @@
+<<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -28,10 +29,16 @@
 			<div id="header">
 				<div class="row-1" "col-md-6">
 					<div class="fleft"><a href="index.html">Cinema <span>World</span></a></div>
-<div class="row-1" "col-md-6">
-					<a href="view/form_inscription.php" class="myButton">Inscription</a>
-					<a href="view/form_connexion.php" class="myButton">Connexion</a>
-				</div>
+					<div class="row-1" "col-md-6">
+					<?php if(isset($_SESSION['nom'])){
+									echo "Bienvenue ".$_SESSION['nom'];
+								}
+								else{
+									echo '<a href="view/form_inscription.php" class="myButton">Inscription</a>
+												<a href="view/form_connexion.php" class="myButton">Connexion</a>';
+								}
+								?>
+						</div>
 			</div>
 				<div class="row-2">
 					<ul>
