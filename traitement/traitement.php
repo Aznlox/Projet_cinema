@@ -23,7 +23,7 @@ else
 
 	// Si la requête a été traitée avec succès
 
-	// Mise à jour de la base de données & traitements divers... Exemple :
+	// Mise à jour de la base de données & traitements divers
 	mysql_query("");
 }
 curl_close($ch);
