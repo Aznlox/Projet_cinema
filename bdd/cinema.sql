@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 02 mars 2020 à 08:50
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le :  lun. 23 mars 2020 à 09:15
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,12 +33,20 @@ USE `cinema`;
 DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(40) NOT NULL,
-  `prenom` varchar(40) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `mdp` varchar(40) NOT NULL,
+  `nom` varchar(40) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(40) COLLATE utf8_bin NOT NULL,
+  `email` varchar(40) COLLATE utf8_bin NOT NULL,
+  `mdp` varchar(40) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `compte`
+--
+
+INSERT INTO `compte` (`id`, `nom`, `prenom`, `email`, `mdp`) VALUES
+(1, 'a', 'a', 'a@a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
+(2, 'b', 'b', 'b@b', 'e9d71f5ee7c92d6dc9e92ffdad17b8bd49418f98');
 
 -- --------------------------------------------------------
 
