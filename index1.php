@@ -28,16 +28,17 @@
 <!-- HEADER -->
 			<div id="header">
 				<div class="row-1" "col-md-6">
-					<div class="fleft"><a href="index.html">Cinema <span>World</span></a></div>
-					<div class="row-1" "col-md-6">
-					<?php if(isset($_SESSION['nom'])){
+					<div class="fleft"><a href="index1.php">Cinema <span>World</span></a></div>
+					<div class="row-1" "col-md-12">
+						<br>
+						<div><?php if(isset($_SESSION['nom'])){
 									echo "Bienvenue ".$_SESSION['nom'];
 								}
 								else{
 									echo '<a href="view/form_inscription.php" class="myButton">Inscription</a>
 												<a href="view/form_connexion.php" class="myButton">Connexion</a>';
 								}
-								?>
+								?><br></div>
 						</div>
 			</div>
 				<div class="row-2">
@@ -45,7 +46,13 @@
 						<li><a href="index1.html" class="active">Home</a></li>
 						<li><a href="view/about-us.html">A propos de nous</a></li>
 						<li><a href="view/contact-us.html">Contacts</a></li>
-						<li class="last"><a href="view/sitemap.html">Sitemap</a></li>
+						<li><a href="view/sitemap.html">Sitemap</a></li>
+						<?php
+							if(isset($_SESSION['nom'])){
+								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
+							}
+						?>
+
 					</ul>
 				</div>
 			</div>
