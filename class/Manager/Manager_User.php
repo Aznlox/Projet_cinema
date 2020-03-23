@@ -44,7 +44,7 @@ class Manager_User{
       $mail->IsHTML(true);
       $mail->Username = "quentin.lignani.schuman@gmail.com";
       $mail->Password = "Admwb2000";
-      $mail->SetFrom($inscription->getMail());
+      $mail->SetFrom($inscription->getEmail());
       $mail->Subject = "[Le Romarin] : Création de compte réussi";
       $mail->Body = "<center><b>Le Romarin</b><br><p>Bonjour ! Votre compte a été créé.</p></center></html>";
       $mail->AddAddress($inscription->getMail());
