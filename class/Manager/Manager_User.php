@@ -68,7 +68,6 @@ class Manager_User{
     $donnee = $req->fetch();
     if ($donnee){
       $_SESSION['email'] = $donnee['email'];
-      $_SESSION['prenom'] = $donnee['prenom'];
       $_SESSION['nom'] = $donnee['nom'];
       /*if (!is_null($donnee['role'])){
         $_SESSION['role'] = $donnee['role'];
@@ -97,7 +96,7 @@ class Manager_User{
     $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE identifiant = ?');
     $req->execute(array($modif->getNom(), $modif->getPrenom(), $email));
     header('location: ../mon_compte.php');
-    //actualisation du prenom de l'utilisateur dans les pages
+    //actualisation du nom de l'utilisateur dans les pages
     $req = $bdd->prepare('SELECT nom from compte where email = ?');
     $req->execute(array($email));
     $donnee = $req->fetch();
