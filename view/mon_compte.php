@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['nom'])){
+  header('location:../index1.php');
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -29,29 +34,16 @@
 			<div id="header">
 				<div class="row-1" "col-md-6">
 					<div class="fleft"><a href="index1.php">Cinema <span>World</span></a></div>
-					<div class="row-1" "col-md-12">
-						<br>
-						<div><?php if(isset($_SESSION['nom'])){
-									echo "Bienvenue ".$_SESSION['nom'];
-								}
-								else{
-									echo '<a href="view/form_inscription.php" class="myButton">Inscription</a>
-												<a href="view/form_connexion.php" class="myButton">Connexion</a>';
-								}
-								?><br></div>
-						</div>
+
 			</div>
 				<div class="row-2">
 					<ul>
-						<li><a href="index1.html" class="active">Home</a></li>
+						<li><a href="index1.html">Home</a></li>
 						<li><a href="view/about-us.html">A propos de nous</a></li>
 						<li><a href="view/contact-us.html">Contacts</a></li>
 						<li><a href="view/sitemap.html">Sitemap</a></li>
-						<?php
-							if(isset($_SESSION['nom'])){
-								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
-							}
-						?>
+						<li class="last"><a href="view/mon_compte.php" class="active">Mon compte</a></li>
+
 
 					</ul>
 				</div>
