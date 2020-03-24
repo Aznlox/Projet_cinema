@@ -80,5 +80,28 @@ class Manager_User{
       header('location: ../view/form_connexion.php');
     }
   }
+
+  //Récupération des données utilisateur pour la modification
+  public function placeholder($email){
+
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('SELECT * from compte where email = ?');
+    $req->execute(array($email));
+    $donnee = $req->fetch();
+    return $donnee;
+  }
+
+  //Update des données utilisateur dans la bdd
+  public function modification(User $modif, $email){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE identifiant = ?');
+    $req->execute(array($modif->getNom(), $modif->getPrenom(), $email));
+    header('location: ../mon_compte.php');
+    //actualisation du prenom de l'utilisateur dans les pages
+    $req = $bdd->prepare('SELECT nom from compte where email = ?');
+    $req->execute(array($email));
+    $donnee = $req->fetch();
+    $_SESSION['nom'] = $donnee['nom'];
+  }
 }
 ?>
