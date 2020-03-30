@@ -93,9 +93,9 @@ class Manager_User{
   //Update des données utilisateur dans la bdd
   public function modification(User $modif, $email){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
-    $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE identifiant = ?');
+    $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE email = ?');
     $req->execute(array($modif->getNom(), $modif->getPrenom(), $email));
-    header('location: ../mon_compte.php');
+    header('location: ../view/mon_compte.php');
     //actualisation du nom de l'utilisateur dans les pages
     $req = $bdd->prepare('SELECT nom from compte where email = ?');
     $req->execute(array($email));
