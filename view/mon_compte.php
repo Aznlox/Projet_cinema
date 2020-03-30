@@ -63,12 +63,11 @@ else{
                 <form id="contacts-form" action="../traitement/cible_modif.php" method="POST">
       						<fieldset>
       						<div class="field"><label>Votre nom:</label><input type="text" name="nom" value=<?php echo $donnee['nom']?> required/></div>
-      						<div class="field"><label>Votre mail:</label><input type="text" name="prenom" value=<?php echo $donnee['prenom']?> required/></div>
-      						<div class="field"><label>Votre Message:</label><input type="email" name="email" value=<?php echo $donnee['email']?> required/></div>
+      						<div class="field"><label>Votre prenom:</label><input type="text" name="prenom" value=<?php echo $donnee['prenom']?> required/></div>
       						<div class="wrapper">
       							<button class="link2">
       								<span>
-      									<span>Envoyer votre message</span>
+      									<span>Modifier</span>
       								</span>
       							</button>
       						</div>
@@ -79,6 +78,7 @@ else{
 					</div>
 				</div>
 			</div>
+      <br>
 <!-- FOOTER -->
 			<div id="footer">
 				<div class="left">

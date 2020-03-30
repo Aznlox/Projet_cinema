@@ -84,7 +84,7 @@ class Manager_User{
   public function placeholder($email){
 
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
-    $req = $bdd->prepare('SELECT * from compte where email = ?');
+    $req = $bdd->prepare('SELECT nom, prenom, email from compte where email = ?');
     $req->execute(array($email));
     $donnee = $req->fetch();
     return $donnee;
@@ -95,7 +95,7 @@ class Manager_User{
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE email = ?');
     $req->execute(array($modif->getNom(), $modif->getPrenom(), $email));
-    header('location: ../view/mon_compte.php');
+    header('location: ../index1.php');
     //actualisation du nom de l'utilisateur dans les pages
     $req = $bdd->prepare('SELECT nom from compte where email = ?');
     $req->execute(array($email));
