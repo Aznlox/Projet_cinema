@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 23 mars 2020 à 09:15
+-- Généré le :  mar. 31 mars 2020 à 07:31
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `compte` (
 --
 
 INSERT INTO `compte` (`id`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(1, 'a', 'a', 'a@a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
+(1, 'test', 'test', 'a@a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
 (2, 'b', 'b', 'b@b', 'e9d71f5ee7c92d6dc9e92ffdad17b8bd49418f98');
 
 -- --------------------------------------------------------

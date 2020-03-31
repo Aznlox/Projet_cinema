@@ -44,7 +44,7 @@
 				<div class="row-2">
 					<ul>
 						<li><a href="index1.html" class="active">Home</a></li>
-						<li><a href="view/about-us.html">A propos de nous</a></li>
+						<li><a href="view/reseration.php">Réservation</a></li>
 						<li><a href="view/contact-us.html">Contacts</a></li>
 						<li><a href="view/sitemap.html">Sitemap</a></li>
 						<?php
