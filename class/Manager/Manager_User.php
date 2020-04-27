@@ -102,5 +102,12 @@ class Manager_User{
     $donnee = $req->fetch();
     $_SESSION['nom'] = $donnee['nom'];
   }
+
+  //reservation dans la bdd
+  public function reservation($email, $nom, $date, $heure, $nb_pers, $film){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('INSERT into reservation (email, nom, nb_pers, film, date, heure) value(?,?,?,?,?,?)');
+    $req -> execute(array($identifiant, $nom, $nb_pers, $film, $date, $heure));
+  }
 }
 ?>

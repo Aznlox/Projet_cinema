@@ -44,9 +44,9 @@ else{
 				<div class="row-2">
 					<ul>
 						<li><a href="../index1.php">Home</a></li>
-						<li><a href="view/about-us.html">A propos de nous</a></li>
-						<li><a href="view/contact-us.html">Contacts</a></li>
-						<li><a href="view/sitemap.html">Sitemap</a></li>
+						<li><a href="about-us.html">A propos de nous</a></li>
+						<li><a href="contact-us.html">Contacts</a></li>
+						<li><a href="sitemap.html">Sitemap</a></li>
 						<li class="last"><a href="view/mon_compte.php" class="active">Mon compte</a></li>
 
 

@@ -58,7 +58,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Personnes</span>
-										<input class="form-control" name="nb_pers" type='number' value="1" min="1" max="10" required>
+										<input class="form-control" name="nb_pers" type='number' value="1" min="1" max="20" required>
 									</div>
 								</div>
                 <div class="col-md-6">
