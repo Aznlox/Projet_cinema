@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Home - Home Page | Cinema - Free Website Template from Templates.com</title>
+<title>Accueil</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Place your description here" />
 <meta name="keywords" content="put, your, keyword, here" />
@@ -48,8 +48,11 @@
 						<li><a href="view/contact-us.html">Contacts</a></li>
 						<li><a href="view/sitemap.html">Sitemap</a></li>
 						<?php
-							if(isset($_SESSION['nom'])){
+							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
+							}
+							else if(isset($_SESSION['nom']) && isset($_SESSION['role'])){
+								echo '<li class="last"><a href="view/gestion_admin.php">Gestion Admin</a></li>';
 							}
 						?>
 

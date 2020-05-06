@@ -31,7 +31,7 @@ else{
 	<link href="ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 </head>
-<body id="page1">
+<body id="page6">
 <div class="tail-top">
 	<div class="tail-bottom">
 		<div id="main">
@@ -55,6 +55,7 @@ else{
 			</div>
 <!-- CONTENT -->
 			<div id="content">
+        <div class="line-hor"></div>
 				<div class="box">
 					<div class="border-right">
 						<div class="border-left">

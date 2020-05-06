@@ -1,7 +1,18 @@
+<?php session_start();
+require '../class/manager/Manager_User.php';
+if(!isset($_SESSION['nom'])){
+  header('location:../index1.php');
+}
+else{
+  $modif = new Manager_User;
+	$donnee = $modif->placeholder($_SESSION['email']);
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Site Map</title>
+<title>Gestion Admin</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Place your description here" />
 <meta name="keywords" content="put, your, keyword, here" />
@@ -26,33 +37,55 @@
 		<div id="main">
 <!-- HEADER -->
 			<div id="header">
-				<div class="row-1">
-					<div class="fleft"><a href="../index.html">Cinema <span>World</span></a></div>
-				</div>
+				<div class="row-1" "col-md-6">
+					<div class="fleft"><a href="../index1.php">Cinema <span>World</span></a></div>
+
+			</div>
 				<div class="row-2">
 					<ul>
 						<li><a href="../index1.php">Home</a></li>
 						<li><a href="about-us.html">A propos de nous</a></li>
 						<li><a href="contact-us.html">Contacts</a></li>
-						<li class="last"><a href="sitemap.html"  class="active">Sitemap</a></li>
+						<li><a href="sitemap.html">Sitemap</a></li>
+						<li class="last"><a href="gestion_admin.php" class="active">Gestion Admin</a></li>
+
+
 					</ul>
 				</div>
 			</div>
 <!-- CONTENT -->
 			<div id="content">
-				<div class="line-hor"></div>
+        <div class="line-hor"></div>
 				<div class="box">
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-								<h3>Plan, <span>Du site</span></h3>
-								<p>Ici vous retrouverez de quoi naviguer dans le site internet, ainsi qu'une carte définissant notre localisation</p>
-
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463.53674245281763!2d2.3828571593084016!3d48.91234778466002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66c2480fcf30d%3A0x45bddda1c3cff10c!2sSquare%20Stalingrad!5e0!3m2!1sfr!2sfr!4v1584434328497!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <h1>Gestion Administrateur</h1><br><br>
+      						<fieldset>
+      						<div class="wrapper">
+      							<button class="link2">
+      								<span>Ajouter un compte Admin</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gestion des Utilisateurs</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gérer les réservations</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gérer les films</span>
+      							</button>
+      						</div>
+      						</fieldset>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+      <br>
 <!-- FOOTER -->
 			<div id="footer">
 				<div class="left">
