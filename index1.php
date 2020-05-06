@@ -48,8 +48,11 @@
 						<li><a href="view/contact-us.html">Contacts</a></li>
 						<li><a href="view/sitemap.html">Sitemap</a></li>
 						<?php
-							if(isset($_SESSION['nom'])){
+							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
+							}
+							else if(isset($_SESSION['nom']) && isset($_SESSION['role'])){
+								echo '<li class="last"><a href="view/gestion_admin.php">Gestion Admin</a></li>';
 							}
 						?>
 

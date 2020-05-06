@@ -69,9 +69,9 @@ class Manager_User{
     if ($donnee){
       $_SESSION['email'] = $donnee['email'];
       $_SESSION['nom'] = $donnee['nom'];
-      /*if (!is_null($donnee['role'])){
+      if ($donnee['role'] == "admin"){
         $_SESSION['role'] = $donnee['role'];
-      }*/
+      }
       header('location: ../index1.php');
     }
     else{
@@ -107,7 +107,7 @@ class Manager_User{
   public function reservation($email, $nom, $date, $heure, $nb_pers, $film){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('INSERT into reservation (email, nom, nb_pers, film, date, heure) value(?,?,?,?,?,?)');
-    $req -> execute(array($identifiant, $nom, $nb_pers, $film, $date, $heure));
+    $req -> execute(array($email, $nom, $nb_pers, $film, $date, $heure));
   }
 }
 ?>

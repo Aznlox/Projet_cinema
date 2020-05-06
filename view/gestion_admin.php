@@ -47,7 +47,7 @@ else{
 						<li><a href="about-us.html">A propos de nous</a></li>
 						<li><a href="contact-us.html">Contacts</a></li>
 						<li><a href="sitemap.html">Sitemap</a></li>
-						<li class="last"><a href="view/mon_compte.php" class="active">Mon compte</a></li>
+						<li class="last"><a href="gestion_admin.php" class="active">Gestion Admin</a></li>
 
 
 					</ul>
@@ -60,20 +60,26 @@ else{
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-                <h1>Modifier vos informations</h1><br>
-                <form id="contacts-form" action="../traitement/cible_modif.php" method="POST">
+                <h1>Gestion Administrateur</h1><br><br>
       						<fieldset>
-      						<div class="field"><label>Votre nom:</label><input type="text" name="nom" value=<?php echo $donnee['nom']?> required/></div>
-      						<div class="field"><label>Votre prenom:</label><input type="text" name="prenom" value=<?php echo $donnee['prenom']?> required/></div>
       						<div class="wrapper">
       							<button class="link2">
-      								<span>
-      									<span>Modifier</span>
-      								</span>
+      								<span>Ajouter un compte Admin</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gestion des Utilisateurs</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gérer les réservations</span>
+      							</button>
+                    <br><br>
+                    <button class="link2">
+      								<span>Gérer les films</span>
       							</button>
       						</div>
       						</fieldset>
-      					</form>
 							</div>
 						</div>
 					</div>
