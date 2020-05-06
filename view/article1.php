@@ -1,26 +1,6 @@
-<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-	$('.repondre').click(function(){
-		var id = $(this).attr('data-rel');
-		if($('#comform-div-' + id).hasClass('hidden'))
-		{
-			$('.repondre').removeClass('button-blue');
-			$(this).addClass('button-blue').css('float','left');
-			$('.comform-div').addClass('hidden');
-			$('#comform-div-' + id).find('p').show();
-			$('#comform-div-' + id).removeClass('hidden');
-			return false;
-		}
-		else
-		{
-			$('#comform-' + id).submit();
-			return false;
-		}
-	});
-</script>
 
 <?php
-	$db = new PDO('mysql:host=;dbname=cinema;charset=utf8mb4', 'root', '');
+	$db = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8mb4', 'root', '');
 	$currenturl = strtolower('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 	// Fonctions de chargement des commentaires
@@ -159,3 +139,25 @@
 	<p class="red right">Votre adresse e-mail n'est pas publiée lorsque vous ajoutez un commentaire.<br />Tous les champs sont obligatoires pour soumettre votre commentaire.</p>
 	<div class="clear"></div>
 </form>
+
+
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	$('.repondre').click(function(){
+		var id = $(this).attr('data-rel');
+		if($('#comform-div-' + id).hasClass('hidden'))
+		{
+			$('.repondre').removeClass('button-blue');
+			$(this).addClass('button-blue').css('float','left');
+			$('.comform-div').addClass('hidden');
+			$('#comform-div-' + id).find('p').show();
+			$('#comform-div-' + id).removeClass('hidden');
+			return false;
+		}
+		else
+		{
+			$('#comform-' + id).submit();
+			return false;
+		}
+	});
+</script>

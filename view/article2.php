@@ -20,7 +20,7 @@
 </script>
 
 <?php
-	$db = new PDO('mysql:host=;dbname=cinema;charset=utf8mb4', 'root', '');
+	$db = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8mb4', 'root', '');
 	$currenturl = strtolower('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 	// Fonctions de chargement des commentaires
