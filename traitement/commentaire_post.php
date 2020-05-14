@@ -11,6 +11,6 @@
         $reqInsertMessage->execute(array($_POST['auteur'], $_POST['commentaire'], $_POST['id_billet']));
 
     // On redirige le visiteur vers la page
-    header('Location: article.php');
+    header('Location: ../view/article.php');
 
 ?>
