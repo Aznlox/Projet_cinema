@@ -44,11 +44,18 @@ else{
 				<div class="row-2">
 					<ul>
 						<li><a href="../index1.php">Home</a></li>
-						<li><a href="about-us.html">A propos de nous</a></li>
-						<li><a href="contact-us.html">Contacts</a></li>
-						<li><a href="sitemap.html">Sitemap</a></li>
-						<li class="last"><a href="gestion_admin.php" class="active">Gestion Admin</a></li>
-
+						<li><a href="sitemap.php">Sitemap</a></li>
+						<?php
+							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
+								echo '<li class="last"><a href="mon_compte.php">Mon compte</a></li>';
+							}
+							else if(isset($_SESSION['nom']) && isset($_SESSION['role'])){
+								echo '<li class="last"><a href="gestion_admin.php">Gestion Admin</a></li>';
+							}
+              if(isset($_SESSION['nom'])){
+								echo '<li class="last"><a href="../traitement/deconnexion.php">Deconnexion</a></li>';
+							}
+						?>
 
 					</ul>
 				</div>
@@ -63,7 +70,7 @@ else{
                 <h1>Gestion Administrateur</h1><br><br>
       						<fieldset>
       						<div class="wrapper">
-      							<button class="link2">
+      							<button class="link2" onclick="">
       								<span>Ajouter un compte Admin</span>
       							</button>
                     <br><br>

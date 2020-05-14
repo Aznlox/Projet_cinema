@@ -178,3 +178,14 @@ body{
 	width: 100%;
 	border-radius: 40px;
 }
+.booking-form .form-btn2>button {
+	color: #fff;
+	background-color: #ff9000;
+	font-weight: 700;
+	height: 25px;
+	font-size: 18px;
+	border: none;
+	display: block;
+	width: 70px;
+	border-radius: 40px;
+}
