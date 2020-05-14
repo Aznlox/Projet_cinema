@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -26,15 +27,41 @@
 		<div id="main">
 <!-- HEADER -->
 			<div id="header">
-				<div class="row-1">
-					<div class="fleft"><a href="../index.html">Cinema <span>World</span></a></div>
-				</div>
+				<div class="row-1" "col-md-6">
+					<div class="fleft"><a href="index1.php">Cinema <span>World</span></a></div>
+					<div class="row-1" "col-md-12">
+						<br>
+						<div><?php if(isset($_SESSION['nom'])){
+									echo "Bienvenue ".$_SESSION['nom'];
+								}
+								else{
+									echo '<a href="view/form_inscription.php" class="myButton">Inscription</a>
+												<a href="view/form_connexion.php" class="myButton">Connexion</a>';
+								}
+								?><br></div>
+						</div>
+			</div>
 				<div class="row-2">
+
 					<ul>
 						<li><a href="../index1.php">Home</a></li>
-						<li><a href="about-us.html">A propos de nous</a></li>
-						<li><a href="contact-us.html">Contacts</a></li>
-						<li class="last"><a href="sitemap.html"  class="active">Sitemap</a></li>
+						<?php
+							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
+								echo '<li><a href="reservation.php">Réservation</a></li>';
+							}
+						?>
+						<li><a href="sitemap.php" class="active">Sitemap</a></li>
+						<?php
+							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
+								echo '<li class="last"><a href="mon_compte.php">Mon compte</a></li>';
+							}
+							else if(isset($_SESSION['nom']) && isset($_SESSION['role'])){
+								echo '<li class="last"><a href="gestion_admin.php">Gestion Admin</a></li>';
+							}
+							if(isset($_SESSION['nom'])){
+								echo '<li class="last"><a href="../traitement/deconnexion.php">Deconnexion</a></li>';
+							}
+						?>
 					</ul>
 				</div>
 			</div>

@@ -4,13 +4,15 @@ require '../class/manager/Manager_User.php';
 session_start();
 
 
-$reserv = new Manager;
+$reserv = new Manager_User;
 
 //enregistrement de la réservation dans la bdd
 $reserv->reservation($_SESSION['email'], $_SESSION['nom'], $_POST['date'], $_POST['time'], $_POST['nb_pers'], $_POST['film']);
 
-$_SESSION['date'] = $_POST['date'];
-$_SESSION['time'] = $_POST['time'];
-header('location: ../view/reserv_reussi.php');
+echo '<script>
+alert("Réservation réussi pour le film '.$_POST['film'].' pour le '.$_POST['date'].' à '.$_POST['time'].'.");
+window.location.href="../index1.php";
+</script>';
+
 
  ?>

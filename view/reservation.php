@@ -28,14 +28,22 @@
 		<![endif]-->
 
 </head>
-
+<script>
+	function retour(){
+		window.history.back();
+	}
+</script>
 <body>
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
 					<div class="booking-form">
+
 						<div class="form-header">
+							<div class="form-btn2">
+								<button class="submit-btn" onclick="retour()">Retour</button>
+							</div>
 							<h2>Réservation</h2>
 							<p>Réservez une place dans notre cinéma</p>
 						</div>

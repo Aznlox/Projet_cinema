@@ -109,5 +109,24 @@ class Manager_User{
     $req = $bdd->prepare('INSERT into reservation (email, nom, nb_pers, film, date, heure) value(?,?,?,?,?,?)');
     $req -> execute(array($email, $nom, $nb_pers, $film, $date, $heure));
   }
+
+  public function inscrip_admin(User $inscription){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('SELECT * FROM compte WHERE email = :email');
+    $req->execute(array('email'=>$inscription->getEmail()));
+    $donnee = $req->fetch();
+    if($donnee)
+    {
+      $_SESSION['erreur_add_admin'] = "L'identifiant est déjà utilisé.";
+      header('Location: ../view/ajout_admin.php');
+    }
+    else{
+      $req = $bdd->prepare('INSERT into compte (nom, prenom, email, mdp, role) value(?,?,?,?, "admin")');
+      $req -> execute(array($inscription->getNom(), $inscription->getPrenom(), $inscription->getEmail(), SHA1($inscription->getMdp())));
+
+      $_SESSION['add_admin'] = "Un compte administrateur a été ajouter avec succès.";
+      header('Location: ../view/ajout_admin.php');
+    }
+  }
 }
 ?>
