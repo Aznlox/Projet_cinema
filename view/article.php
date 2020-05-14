@@ -2,13 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Mon blog</title>
+        <title>Espace billet et commentaire</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Place your description here" />
+        <meta name="keywords" content="put, your, keyword, here" />
+        <meta name="author" content="Templates.com - website templates provider" />
+        <link href="lib/css/style.css" rel="stylesheet" type="text/css" />
+        <script src="lib/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+        <script src="lib/js/cufon-yui.js" type="text/javascript"></script>
+        <script src="lib/js/cufon-replace.js" type="text/javascript"></script>
+        <script src="lib/js/Gill_Sans_400.font.js" type="text/javascript"></script>
+        <script src="lib/js/script.js" type="text/javascript"></script>
 	<link href="style.css" rel="stylesheet" />
     </head>
 
     <body>
-        <h1>Mon super blog !</h1>
-        <p>Derniers billets du blog :</p>
+        <h1>Espace commentaire !</h1>
+        <p>Derniers billets du cinema :</p>
 
 <?php
 // Connexion à la base de données
@@ -47,5 +57,8 @@ while ($donnees = $req->fetch())
 } // Fin de la boucle des billets
 $req->closeCursor();
 ?>
+
+
+<div class="wrapper"><a href="../index1.php" class="link2"><span><span>Retourne au menu principal</span></span></a></div>
 </body>
 </html>

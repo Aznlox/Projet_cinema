@@ -105,17 +105,17 @@
 						<li>
 							<CENTER><h4>Shrekt 3</h4><img src="lib/images/Shrekt.jpg" alt="" width="94px" height="154px" /></CENTER>
 							<p>Shrek retourne dans une nouvelle aventure pour exercé sa vengeance après que Nathan Goncalves est kidnappé Fiona(il est dans la merde)!</p>
-							<div class="wrapper"><a href="article1.php" class="link2"><span><span>Read More</span></span></a></div>
+
 						</li>
 						<li>
 							<CENTER><h4>Dark</h4><img src="lib/images/dark.png" alt="" width="94px" height="154px"/></CENTER>
 							<p>cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien</p>
-							<div class="wrapper"><a href="article2.php" class="link2"><span><span>Read More</span></span></a></div>
+							<div class="wrapper"><a href="view/article.php" class="link2"><span><span>Read More</span></span></a></div>
 						</li>
 						<li class="last">
 							<CENTER><h4>GFL: Depression is coming.</h4><img src="lib/images/sad.jpg" alt="" width="280px" height="154px" /></CENTER>
 							<p>Suivez les aventures de l'AR team dans une quête remplie de rebondissement et de larmes, en gros tu vas chialer frère.</p>
-							<div class="wrapper"><a href="article3.php" class="link2"><span><span>Read More</span></span></a></div>
+
 						</li>
 						<li class="clear">&nbsp;</li>
 					</ul>

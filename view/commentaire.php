@@ -8,7 +8,7 @@
 
     <body>
         <h1>Espace commentaire</h1>
-        <p><a href="index.php">Retour à la liste des billets</a></p>
+        <p><a href="article.php">Retour à la liste des billets</a></p>
 
 <?php
 // Connexion à la base de données
@@ -61,7 +61,7 @@ $req->closeCursor();
 ?>
 
 <h2>Poster un commentaire:</h2>
-<form method="post" action="commentaire_post.php">
+<form method="post" action="../traitement/commentaire_post.php">
     <label for="auteurCommentaire">Pseudo : </label>
     <input type="text" name="auteur" id="auteur"/><br/><br/>
     <label for="commentaire">Message : </label>
