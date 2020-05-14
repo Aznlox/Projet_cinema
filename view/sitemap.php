@@ -50,7 +50,7 @@
 								echo '<li><a href="reservation.php">Réservation</a></li>';
 							}
 						?>
-						<li><a href="sitemap.php">Sitemap</a></li>
+						<li><a href="sitemap.php" class="active">Sitemap</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="mon_compte.php">Mon compte</a></li>';

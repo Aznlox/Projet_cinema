@@ -52,7 +52,7 @@ else{
 						<li><a href="sitemap.php">Sitemap</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
-								echo '<li class="last"><a href="mon_compte.php">Mon compte</a></li>';
+								echo '<li class="last"><a href="mon_compte.php" class="active">Mon compte</a></li>';
 							}
 							else if(isset($_SESSION['nom']) && isset($_SESSION['role'])){
 								echo '<li class="last"><a href="gestion_admin.php">Gestion Admin</a></li>';

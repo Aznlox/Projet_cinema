@@ -68,25 +68,21 @@ else{
 						<div class="border-left">
 							<div class="inner">
                 <h1>Gestion Administrateur</h1><br><br>
-      						<fieldset>
-      						<div class="wrapper">
-      							<button class="link2" onclick="window.location='ajout_admin.php'">
-      								<span>Ajouter un compte Admin</span>
-      							</button>
-                    <br><br>
-                    <button class="link2" onclick="window.location='gest_uti.php'">
-      								<span>Gestion des Utilisateurs</span>
-      							</button>
-                    <br><br>
-                    <button class="link2" onclick="window.location='manage_reserv.php'">
-      								<span>Gérer les réservations</span>
-      							</button>
-                    <br><br>
-                    <button class="link2" onclick="window.location='manage_film.php'">
-      								<span>Gérer les films</span>
-      							</button>
-      						</div>
-      						</fieldset>
+                <form id="contacts-form" action="../traitement/cible_modif.php" method="POST">
+                  <fieldset>
+                    <div class="field"><label>Email:</label><input type="text" name="email" required/></div>
+                    <div class="field"><label>Nom:</label><input type="text" name="nom" required/></div>
+                    <div class="field"><label>Prénom:</label><input type="text" name="prenom" required/></div>
+                    <div class="field"><label>Mot de passe:</label><input type="text" name="mdp" required/></div>
+                    <div class="wrapper">
+                    <button class="link2">
+                      <span>
+                        <span>Ajouter un Administrateur</span>
+                      </span>
+                    </button>
+                  </div>
+                  </fieldset>
+                </form>
 							</div>
 						</div>
 					</div>
