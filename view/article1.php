@@ -20,7 +20,7 @@
 		foreach($db->query($sql) as $data) {
 			$i++;
 			mt_srand(crc32($data['email']));
-
+			
 			$commentaires .= '<div class="box-light">';
 
 				if($i==1 && $id_commentaire==0)
