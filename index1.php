@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+			require 'class/manager/Manager_Film.php';
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -90,6 +92,16 @@
 				<div class="content">
 					<h3>Fresh <span>Movies</span></h3>
 					<ul class="movies">
+						<?php
+							$get_film = new Manager_Film;
+							$donnee = $get_film->recup_film();
+							foreach($donnee as $value) {
+								echo '<li>
+									<CENTER><h4>'.$value['film'].'</h4><img src='.$value['image'].' alt="" width="'.$value['width'].'px" height="'.$value['height'].'px" /></CENTER>
+									<p>'.$value['description'].'</p>
+								</li>';
+							}
+						 ?>
 						<li>
 							<CENTER><h4>Shrekt 3</h4><img src="lib/images/Shrekt.jpg" alt="" width="94px" height="154px" /></CENTER>
 							<p>Shrek retourne dans une nouvelle aventure pour exercé sa vengeance après que Nathan Goncalves est kidnappé Fiona(il est dans la merde)!</p>
