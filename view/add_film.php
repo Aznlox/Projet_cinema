@@ -63,36 +63,22 @@ if(!isset($_SESSION['nom'])){
 							<div class="inner">
                 <h1>Gestion Administrateur</h1><br>
                 <h4>Gérer les films</h4><br>
-      						<fieldset>
-      						<div class="wrapper">
-                    <?php
-        							$manage_film = new Manager_Film;
-        							$donnee = $manage_film->recup_film();
-        							foreach($donnee as $value) {
-        								echo '<li class="last">
-        									<h4>Nom du Film:  '.$value['film'].'</h4>Lien vers l\'image: <img src='.$value['image'].' alt="'.$value['image'].'" width="'.$value['width'].'px" height="'.$value['height'].'px" />
-        									<p>Description: '.$value['description'].'</p>
-        								</li>';
-        							}
-        						 ?>
-      						</div>
-                  <button class="link2" onclick="window.location='add_film.php'">
-                    <span>Ajouter un film</span>
-                  </button>
-                  <br><br>
-                  <form id="contacts-form" action="../traitement/cible_suppr_film.php" method="POST">
-        						<fieldset>
-        						<div class="field"><label>Nom du film:</label><input type="text" name="film" value="" require/></div>
-        						<div class="wrapper">
-        							<button class="link2">
-        								<span>
-        									<span>Supprimer</span>
-        								</span>
-        							</button>
-        						</div>
-        						</fieldset>
-        					</form>
-      						</fieldset>
+                <form id="contacts-form" action="../traitement/cible_add_film.php" method="POST">
+                  <fieldset>
+                  <div class="field"><label>Nom du film:</label><input type="text" name="film" value="" require/></div>
+                  <div class="field"><label>Description:</label><input type="text" name="desc" value="" require/></div>
+                  <div class="field"><label>Lien du film:</label><input type="text" name="lien" value="" placeholder="ex: /lib/images/nom_image.png" require/>Ajoutez l'affiche dans la bibliothèque d'image</div>
+                  <div class="field"><label>Largeur affiche</label><input type="number" name="width" value="94" require/>Laisser comme tel si l'affiche est en format portrait</div>
+                  <div class="field"><label>Hauteur affiche:</label><input type="number" name="height" value="154" require/></div>
+                  <div class="wrapper">
+                    <button class="link2">
+                      <span>
+                        <span>Ajouter</span>
+                      </span>
+                    </button>
+                  </div>
+                  </fieldset>
+                </form>
 							</div>
 						</div>
 					</div>

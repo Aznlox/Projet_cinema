@@ -21,7 +21,6 @@
       $donnee = $req->fetch();
       if($donnee)
       {
-        $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
         $req = $bdd->prepare('DELETE FROM film WHERE film = ?');
         $req->execute(array($film));
         header('location:../view/manage_film.php');
@@ -31,6 +30,25 @@
         alert("Le film n\'existe pas.");
         window.location.href="../view/manage_film.php";
         </script>';
+      }
+    }
+
+    public function add_film($film, $desc, $lien, $width, $height){
+      $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+      $req = $bdd->prepare('SELECT * FROM film WHERE film = ?');
+      $req->execute(array($film));
+      $donnee = $req->fetch();
+      if($donnee)
+      {
+        echo '<script>
+        alert("Le film existe déjà.");
+        window.location.href="../view/manage_film.php";
+        </script>';
+      }
+      else {
+        $req = $bdd->prepare('INSERT into film (film, description, image, width, height) value(?,?,?,?,?)');
+        $req -> execute(array($film, $desc, $lien, $width, $height));
+        header('Location: ../view/manage_film.php');
       }
     }
   }
