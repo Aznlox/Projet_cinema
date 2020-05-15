@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Site Map</title>
+<title>Où nous trouver</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Place your description here" />
 <meta name="keywords" content="put, your, keyword, here" />
@@ -50,7 +50,7 @@
 								echo '<li><a href="reservation.php">Réservation</a></li>';
 							}
 						?>
-						<li><a href="sitemap.php" class="active">Sitemap</a></li>
+						<li><a href="sitemap.php" class="active">Où nous trouver</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="mon_compte.php">Mon compte</a></li>';
