@@ -96,27 +96,12 @@
 							$get_film = new Manager_Film;
 							$donnee = $get_film->recup_film();
 							foreach($donnee as $value) {
-								echo '<li>
+								echo '<li class="last">
 									<CENTER><h4>'.$value['film'].'</h4><img src='.$value['image'].' alt="" width="'.$value['width'].'px" height="'.$value['height'].'px" /></CENTER>
 									<p>'.$value['description'].'</p>
 								</li>';
 							}
 						 ?>
-						<li>
-							<CENTER><h4>Shrekt 3</h4><img src="lib/images/Shrekt.jpg" alt="" width="94px" height="154px" /></CENTER>
-							<p>Shrek retourne dans une nouvelle aventure pour exercé sa vengeance après que Nathan Goncalves est kidnappé Fiona(il est dans la merde)!</p>
-
-						</li>
-						<li>
-							<CENTER><h4>Dark</h4><img src="lib/images/dark.png" alt="" width="94px" height="154px"/></CENTER>
-							<p>cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien cest trop bien</p>
-							<div class="wrapper"><a href="view/article.php" class="link2"><span><span>Read More</span></span></a></div>
-						</li>
-						<li class="last">
-							<CENTER><h4>GFL: Depression is coming.</h4><img src="lib/images/sad.jpg" alt="" width="280px" height="154px" /></CENTER>
-							<p>Suivez les aventures de l'AR team dans une quête remplie de rebondissement et de larmes, en gros tu vas chialer frère.</p>
-
-						</li>
 						<li class="clear">&nbsp;</li>
 					</ul>
 				</div>
