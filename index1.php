@@ -6,9 +6,6 @@
 <head>
 <title>Accueil</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Place your description here" />
-<meta name="keywords" content="put, your, keyword, here" />
-<meta name="author" content="Templates.com - website templates provider" />
 <link href="lib/css/style.css" rel="stylesheet" type="text/css" />
 <script src="lib/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <script src="lib/js/cufon-yui.js" type="text/javascript"></script>
