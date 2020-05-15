@@ -48,7 +48,7 @@
 								echo '<li><a href="view/reservation.php">Réservation</a></li>';
 							}
 						?>
-						<li><a href="view/sitemap.php">Sitemap</a></li>
+						<li><a href="view/sitemap.php">Où nous trouver</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
