@@ -72,10 +72,10 @@
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-								<h3>Plan, <span>Du site</span></h3>
-								<p>Ici vous retrouverez de quoi naviguer dans le site internet, ainsi qu'une carte définissant notre localisation</p>
+								<h3>Localisation de notre <span>Cinéma</span></h3>
+								<p>Ici vous retrouverez une belle carte google map qui indique notre position :)</p>
 
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463.53674245281763!2d2.3828571593084016!3d48.91234778466002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66c2480fcf30d%3A0x45bddda1c3cff10c!2sSquare%20Stalingrad!5e0!3m2!1sfr!2sfr!4v1584434328497!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1311.4285346944346!2d2.375405558297906!3d48.8990610580745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66c2c66f44dff%3A0xff07d1b7ba837f79!2sUGC%20Cin%C3%A9%20Cit%C3%A9%20Paris%2019!5e0!3m2!1sfr!2sfr!4v1589553146966!5m2!1sfr!2sfr" width="850" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 						</div>
 					</div>
 				</div>
