@@ -1,11 +1,7 @@
 <?php session_start();
-require '../class/manager/Manager_User.php';
+require '../class/manager/Manager_Film.php';
 if(!isset($_SESSION['nom'])){
   header('location:../index1.php');
-}
-else{
-  $modif = new Manager_User;
-	$donnee = $modif->placeholder($_SESSION['email']);
 }
 ?>
 
@@ -20,17 +16,7 @@ else{
 <script src="../lib/js/cufon-replace.js" type="text/javascript"></script>
 <script src="../lib/js/Gill_Sans_400.font.js" type="text/javascript"></script>
 <script src="../lib/js/script.js" type="text/javascript"></script>
-<?php
 
-if(isset($_SESSION['erreur_add_admin'])){
-  echo '<script>alert("L\'identifiant est déjà utilisé.");</script>';
-  unset($_SESSION['erreur_add_admin']);
-}
-else if(isset($_SESSION['add_admin'])){
-  echo "<script>alert('Un compte administrateur a été ajouter avec succès.');</script>";
-  unset($_SESSION['add_admin']);
-}
-?>
 <!--[if lt IE 7]>
 	<script type="text/javascript" src="../lib/js/ie_png.js"></script>
 	<script type="text/javascript">
@@ -75,22 +61,38 @@ else if(isset($_SESSION['add_admin'])){
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-                <h1>Gestion Administrateur</h1><br><br>
-                <form id="contacts-form" action="../traitement/cible_ajout_admin.php" method="POST">
-                  <fieldset>
-                    <div class="field"><label>Identifiant:</label><input type="text" name="email" required/></div>
-                    <div class="field"><label>Nom:</label><input type="text" name="nom" required/></div>
-                    <div class="field"><label>Prénom:</label><input type="text" name="prenom" required/></div>
-                    <div class="field"><label>Mot de passe:</label><input type="Password" name="mdp" required/></div>
-                    <div class="wrapper">
-                    <button class="link2">
-                      <span>
-                        <span>Ajouter un Administrateur</span>
-                      </span>
-                    </button>
-                  </div>
-                  </fieldset>
-                </form>
+                <h1>Gestion Administrateur</h1><br>
+                <h4>Gérer les films</h4><br>
+      						<fieldset>
+      						<div class="wrapper">
+                    <?php
+        							$manage_film = new Manager_Film;
+        							$donnee = $manage_film->recup_film();
+        							foreach($donnee as $value) {
+        								echo '<li class="last">
+        									<h4>Nom du Film:  '.$value['film'].'</h4>Lien vers l\'image: <img src='.$value['image'].' alt="'.$value['image'].'" width="'.$value['width'].'px" height="'.$value['height'].'px" />
+        									<p>Description: '.$value['description'].'</p>
+        								</li>';
+        							}
+        						 ?>
+      						</div>
+                  <button class="link2" onclick="window.location='manage_film.php'">
+                    <span>Ajouter un film</span>
+                  </button>
+                  <br><br>
+                  <form id="contacts-form" action="../traitement/cible_suppr_film.php" method="POST">
+        						<fieldset>
+        						<div class="field"><label>Nom du film:</label><input type="text" name="film" value="" require/></div>
+        						<div class="wrapper">
+        							<button class="link2">
+        								<span>
+        									<span>Supprimer</span>
+        								</span>
+        							</button>
+        						</div>
+        						</fieldset>
+        					</form>
+      						</fieldset>
 							</div>
 						</div>
 					</div>
