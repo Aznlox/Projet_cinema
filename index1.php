@@ -103,9 +103,15 @@
 							}
 						 ?>
 						<li class="clear">&nbsp;</li>
+
 					</ul>
 				</div>
 			</div>
+			<div class="row-1" "col-md-6">
+				<div class="wrapper"><a href="view/article.php" class="link1"><span><span>Espace Commentaires</span></span></a></div>
+			</div>
+		</br>
+	</br>
 <!-- FOOTER -->
 			<div id="footer">
 				<div class="left">
