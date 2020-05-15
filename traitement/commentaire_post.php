@@ -1,7 +1,7 @@
 <?php
 
     try {
-        $connexionBDD = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
+        $connexionBDD = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
     } catch(Exception $ex) {
         die('Erreur : '.$ex->getMessage());
     }
