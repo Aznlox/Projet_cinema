@@ -128,5 +128,12 @@ class Manager_User{
       header('Location: ../view/ajout_admin.php');
     }
   }
+
+  public function recup_user(){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->query('SELECT * FROM compte');
+    $donnee = $req->fetchall();
+    return $donnee;
+  }
 }
 ?>
