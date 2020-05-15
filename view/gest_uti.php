@@ -15,22 +15,12 @@ else{
 <title>Gestion Admin</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../lib/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../lib/css/tableau.css" rel="stylesheet" type="text/css">
 <script src="../lib/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <script src="../lib/js/cufon-yui.js" type="text/javascript"></script>
 <script src="../lib/js/cufon-replace.js" type="text/javascript"></script>
 <script src="../lib/js/Gill_Sans_400.font.js" type="text/javascript"></script>
 <script src="../lib/js/script.js" type="text/javascript"></script>
-<?php
-
-if(isset($_SESSION['erreur_add_admin'])){
-  echo '<script>alert("L\'identifiant est déjà utilisé.");</script>';
-  unset($_SESSION['erreur_add_admin']);
-}
-else if(isset($_SESSION['add_admin'])){
-  echo "<script>alert('Un compte administrateur a été ajouter avec succès.');</script>";
-  unset($_SESSION['add_admin']);
-}
-?>
 <!--[if lt IE 7]>
 	<script type="text/javascript" src="../lib/js/ie_png.js"></script>
 	<script type="text/javascript">
@@ -76,21 +66,30 @@ else if(isset($_SESSION['add_admin'])){
 						<div class="border-left">
 							<div class="inner">
                 <h1>Gestion Administrateur</h1><br><br>
-                <form id="contacts-form" action="../traitement/cible_ajout_admin.php" method="POST">
-                  <fieldset>
-                    <div class="field"><label>Identifiant:</label><input type="text" name="email" required/></div>
-                    <div class="field"><label>Nom:</label><input type="text" name="nom" required/></div>
-                    <div class="field"><label>Prénom:</label><input type="text" name="prenom" required/></div>
-                    <div class="field"><label>Mot de passe:</label><input type="Password" name="mdp" required/></div>
-                    <div class="wrapper">
-                    <button class="link2">
-                      <span>
-                        <span>Ajouter un Administrateur</span>
-                      </span>
-                    </button>
-                  </div>
-                  </fieldset>
-                </form>
+      						<fieldset>
+      						<div class="wrapper">
+                    <table>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                    </tr>
+                    <?php
+        							$affiche_user = new Manager_User;
+        							$donnee = $affiche_user->recup_user();
+        							foreach($donnee as $value) {
+        								echo "<tr>
+                          <td>".$value['nom']."</td>
+                          <td>".$value['prenom']."</td>
+                          <td>".$value['email']."</td>
+                          <td>".$value['role']."</td>
+                        </tr>";
+        							}
+        						 ?>
+                     </table>
+      						 </div>
+      						</fieldset>
 							</div>
 						</div>
 					</div>
