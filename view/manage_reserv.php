@@ -71,24 +71,36 @@ else{
                     <table>
                     <tr>
                       <th>Nom</th>
-                      <th>Prénom</th>
                       <th>Email</th>
-                      <th>Role</th>
+                      <th>nb personnes</th>
+                      <th>film</th>
+                      <th>date</th>
+                      <th>heure</th>
                     </tr>
                     <?php
-        							$affiche_user = new Manager_User;
-        							$donnee = $affiche_user->recup_user();
+        							$manage_reserv = new Manager_User;
+        							$donnee = $manage_reserv->recup_reserv();
         							foreach($donnee as $value) {
         								echo "<tr>
                           <td>".$value['nom']."</td>
-                          <td>".$value['prenom']."</td>
                           <td>".$value['email']."</td>
-                          <td>".$value['role']."</td>
+                          <td>".$value['nb_pers']."</td>
+                          <td>".$value['film']."</td>
+                          <td>".$value['date']."</td>
+                          <td>".$value['heure']."</td>
                         </tr>";
         							}
+                      if(isset($_GET['suppr'])){
+                        $manage_reserv -> suppr_reserv();
+                      }
+
         						 ?>
                      </table>
                      <br>
+                     <button class="link2" onclick="window.location='manage_reserv.php?suppr=true'">
+       								<span>Vider le tableau</span>
+       							</button>
+                    <br><br>
                      <button class="link2" onclick="window.history.back();">
        								<span>Retour</span>
        							</button>

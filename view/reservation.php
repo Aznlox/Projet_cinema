@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php date_default_timezone_set('Europe/Paris'); ?>
+<?php
+session_start();
+require '../class/manager/Manager_Film.php';
+$nom_film = new Manager_Film;
+$donnee = $nom_film->recup_film();
+
+date_default_timezone_set('Europe/Paris'); ?>
 
 <head>
 	<meta charset="utf-8">
@@ -73,9 +79,15 @@
 									<div class="form-group">
 										<span class="form-label">Film</span>
 										<select class="form-control" name="film" required>
-                      <option>film 1</option>
-                      <option>film 2</option>
-                      <option>film 3</option>
+											<?php
+												session_start();
+												require '../class/manager/Manager_User.php';
+	        							$nom_film = new Manager_Film;
+	        							$donnee = $nom_film->recup_film();
+	        							foreach($donnee as $value) {
+	        								echo '<option>'.$value['film'].'</option>';
+	        							}
+	        						 ?>
                     </select>
 									</div>
 								</div>

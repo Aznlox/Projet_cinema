@@ -75,7 +75,7 @@ class Manager_User{
       header('location: ../index1.php');
     }
     else{
-      $_SESSION['erreur_login'] = "Email ou mdp erroné";
+      $_SESSION['erreur_co'] = true;
       header('location: ../view/form_connexion.php');
     }
   }
@@ -134,6 +134,22 @@ class Manager_User{
     $req = $bdd->query('SELECT * FROM compte');
     $donnee = $req->fetchall();
     return $donnee;
+  }
+
+  public function recup_reserv(){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->query('SELECT * FROM reservation');
+    $donnee = $req->fetchall();
+    return $donnee;
+  }
+
+  public function suppr_reserv(){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->query('TRUNCATE TABLE reservation');
+    echo '<script>
+    alert("Toutes les réservations on été supprimé.");
+    window.location.href="manage_reserv.php"
+    </script>';
   }
 }
 ?>
