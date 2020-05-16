@@ -66,6 +66,7 @@ if(!isset($_SESSION['nom'])){
       						<fieldset>
       						<div class="wrapper">
                     <?php
+                      //affichage des films
         							$manage_film = new Manager_Film;
         							$donnee = $manage_film->recup_film();
         							foreach($donnee as $value) {

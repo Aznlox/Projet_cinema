@@ -94,6 +94,7 @@ else{
                   <th>heure</th>
                 </tr>
                 <?php
+                //affichage des réservations
                   $manage_reserv = new Manager_User;
                   $donnee = $manage_reserv->recup_reserv_user($_SESSION['email']);
                   foreach($donnee as $value) {
