@@ -30,7 +30,9 @@
 					<div class="fleft"><a href="index1.php">Cinema <span>World</span></a></div>
 					<div class="row-1" "col-md-12">
 						<br>
-						<div><?php if(isset($_SESSION['nom'])){
+						<div><?php
+									//Connexion ou connecté
+									if(isset($_SESSION['nom'])){
 									echo "Bienvenue ".$_SESSION['nom'];
 								}
 								else{
@@ -46,6 +48,7 @@
 						<li><a href="view/reservation.php">Réservation</a></li>;
 						<li><a href="view/sitemap.php">Où nous trouver</a></li>
 						<?php
+							//affichage des boutons si connecté ou non
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li class="last"><a href="view/mon_compte.php">Mon compte</a></li>';
 							}
@@ -92,6 +95,7 @@
 					<h3>Film<span>à l'affiche</span></h3>
 					<ul class="movies">
 						<?php
+							//Affichage des films
 							$get_film = new Manager_Film;
 							$donnee = $get_film->recup_film();
 							foreach($donnee as $value) {

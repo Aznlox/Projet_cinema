@@ -88,13 +88,13 @@ else{
                 <table>
                 <tr>
                   <th>Nom</th>
-                  <th>Email</th>
                   <th>nb personnes</th>
                   <th>film</th>
                   <th>date</th>
                   <th>heure</th>
                 </tr>
                 <?php
+                //affichage des réservations
                   $manage_reserv = new Manager_User;
                   $donnee = $manage_reserv->recup_reserv_user($_SESSION['email']);
                   foreach($donnee as $value) {
