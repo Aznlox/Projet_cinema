@@ -110,6 +110,7 @@ class Manager_User{
     $req -> execute(array($email, $nom, $nb_pers, $film, $date, $heure));
   }
 
+  //inscription d'un compte admin
   public function inscrip_admin(User $inscription){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('SELECT * FROM compte WHERE email = :email');
@@ -129,6 +130,7 @@ class Manager_User{
     }
   }
 
+  //récupération des données utilisateur pour un affichage
   public function recup_user(){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->query('SELECT * FROM compte');
@@ -136,6 +138,7 @@ class Manager_User{
     return $donnee;
   }
 
+  //récupération des données réservations pour un affichage
   public function recup_reserv(){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->query('SELECT * FROM reservation');
@@ -143,6 +146,7 @@ class Manager_User{
     return $donnee;
   }
 
+  //suppression des réservations
   public function suppr_reserv(){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->query('TRUNCATE TABLE reservation');
@@ -152,6 +156,7 @@ class Manager_User{
     </script>';
   }
 
+  //récupération des données réservations pour un affichage utilisateur
   public function recup_reserv_user($email){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('SELECT * FROM reservation WHERE email = ?');
@@ -160,6 +165,7 @@ class Manager_User{
     return $donnee;
   }
 
+  //suppression des réservations utilisateurs
   public function suppr_reserv_user($email){
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('DELETE FROM reservation where email = ?');

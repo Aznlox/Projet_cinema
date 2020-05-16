@@ -7,6 +7,7 @@
     private $_desc;
     private $_image;
 
+    //récupère les informations des film pour l'affichage
     public function recup_film(){
       $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
       $req = $bdd->query('SELECT * FROM film');
@@ -14,6 +15,7 @@
       return $donnee;
     }
 
+    //suppression d'un film dans la bdd
     public function suppr_titre($film){
       $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
       $req = $bdd->prepare('SELECT * FROM film WHERE film = ?');
@@ -33,6 +35,7 @@
       }
     }
 
+    //ajout d'un film dans la bdd
     public function add_film($film, $desc, $lien, $width, $height){
       $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
       $req = $bdd->prepare('SELECT * FROM film WHERE film = ?');
