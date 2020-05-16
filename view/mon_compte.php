@@ -88,7 +88,6 @@ else{
                 <table>
                 <tr>
                   <th>Nom</th>
-                  <th>Email</th>
                   <th>nb personnes</th>
                   <th>film</th>
                   <th>date</th>
