@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				<div class="content">
-					<h3>Film<span>à l'affiche</span></h3>
+					<h3>Film <span>à l'affiche</span></h3>
 					<ul class="movies">
 						<?php
 							//Affichage des films
