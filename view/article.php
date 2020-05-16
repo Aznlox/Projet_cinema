@@ -33,14 +33,14 @@ catch(Exception $e)
 }
 
 // On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 5');
+$req = $bdd->query('SELECT id, titre, contenu, NomF, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 100');
 
 while ($donnees = $req->fetch())
 {
 ?>
 <div class="news">
     <h3>
-        <?php echo htmlspecialchars($donnees['titre']); ?>
+        <?php echo htmlspecialchars($donnees['NomF']); ?>
         <em>le <?php echo $donnees['date_creation_fr']; ?></em>
     </h3>
 

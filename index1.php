@@ -70,8 +70,7 @@
 					<div class="image png"></div>
 					<div class="inside">
 						<h2>Il n'y a plus<span>DE LIMITE</span></h2>
-						<p>Bienvenue dans un cinéma extraordinaire avec un choix de film effarant qui s'élève au nombre de 3 films mdr</p>
-						<div class="wrapper"><a href="#" class="link1"><span><span>Learn More</span></span></a></div>
+						<p>Bienvenue dans un cinéma extraordinaire avec un choix de film effarant mdr</p>
 					</div>
 				</div>
 				<div class="box">
@@ -79,9 +78,16 @@
 						<div class="border-left">
 							<div class="inner">
 								<h3>Welcome to <b>Cinema</b> <span>World</span></h3>
-								<p>Cinema World Site is a free web template created by TemplateMonster.com team. This website template is optimized for 1024X768 screen resolution. It is also XHTML &amp; CSS valid.</p>
-								<div class="img-box1"><img src="lib/images/1page-img1.jpg" alt="" />This website template can be delivered in two packages - with PSD source files included and without them. If you need PSD source files, please go to the template download page at TemplateMonster to leave the e-mail address that you want the template ZIP package to be delivered to.</div>
-								<p>This website template has several pages: <a href="index.html">Home</a>, <a href="about-us.html">About us</a>, <a href="articles.html">Articles</a> (with Article page), <a href="contact-us.html">Contact us</a> (note that contact us form – doesn’t work), <a href="sitemap.html">Site Map</a>.</p>
+								<p>Ceci est le cinéma le plus claqué au sol.</p>
+								<div class="img-box1"><img src="lib/images/1page-img1.jpg" alt="" />Dans ce cinéma tu retrouveras des parodies de films actuels ou des création originales. Après je ne sais plus trop quoi écrire pour ralonger ce dialogue, mais sois au courant que je suis très heureux de pouvoir te parler et que tu as predu 5 min de ta vie à lire tout ça. </div>
+								<div class="row-1" "col-md-6">
+									<?php
+									if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
+										echo '<div class="wrapper"><a href="view/article.php" class="link1"><span><span>Espace Commentaires</span></span></a></div>';
+									}
+									?>
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -103,9 +109,6 @@
 
 					</ul>
 				</div>
-			</div>
-			<div class="row-1" "col-md-6">
-				<div class="wrapper"><a href="view/article.php" class="link1"><span><span>Espace Commentaires</span></span></a></div>
 			</div>
 		</br>
 	</br>

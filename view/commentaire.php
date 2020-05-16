@@ -62,7 +62,7 @@ $req->closeCursor();
 
 <h2>Poster un commentaire:</h2>
 <form method="post" action="../traitement/commentaire_post.php">
-    <label for="auteurCommentaire">Pseudo : </label>
+    <label for="auteur">Pseudo : </label>
     <input type="text" name="auteur" id="auteur"/><br/><br/>
     <label for="commentaire">Message : </label>
     <input type="text" name="commentaire" id="commentaire"/><br/><br/>
