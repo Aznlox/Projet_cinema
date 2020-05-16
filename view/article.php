@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+<?php
+session_start();
+require '../class/manager/Manager_Film.php';
+
+if(!isset($_SESSION['nom'])){
+  header('location:form_connexion.php?reserv=true');
+}
+$nom_film = new Manager_Film;
+$donnee = $nom_film->recup_film();
+
+date_default_timezone_set('Europe/Paris'); ?>
     <head>
         <meta charset="utf-8" />
         <title>Espace billet et commentaire</title>
@@ -17,9 +28,8 @@
     </head>
 
     <body>
+      <h1><font color="red"> Disclaimer ! : A cause de quelque difficulté technique l'ajout de commentaire ne se fait que depuis la base de donnée</h1> </font>
         <h1>Espace commentaire !</h1>
-        <p>Derniers billets du cinema :</p>
-
 <?php
 // Connexion à la base de données
 try
@@ -32,31 +42,35 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 
-// On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id, titre, contenu, NomF, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 100');
-
-while ($donnees = $req->fetch())
-{
 ?>
-<div class="news">
-    <h3>
-        <?php echo htmlspecialchars($donnees['NomF']); ?>
-        <em>le <?php echo $donnees['date_creation_fr']; ?></em>
-    </h3>
 
-    <p>
-    <?php
-    // On affiche le contenu du billet
-    echo nl2br(htmlspecialchars($donnees['contenu']));
-    ?>
-    <br />
-    <em><a href="commentaire.php?billet=<?php echo $donnees['id']; ?>">Commentaires</a></em>
-    </p>
-</div>
-<?php
-} // Fin de la boucle des billets
-$req->closeCursor();
-?>
+<form method="post" action="../traitement/commentaire_post.php">
+<div class="row">
+
+<form method="post" action="../traitement/commentaire_post.php">
+    <label for="story">Commentaire:</label>
+
+<textarea id="commentaire" name="commentaire"
+          rows="5" cols="33">
+</textarea>
+</br>
+</br>
+</br>
+<div class="col-md-6">
+  <div class="form-group">
+    <span class="form-label">Film</span>
+    <select class="form-control" name="film" required>
+      <?php
+        session_start();
+        require '../class/manager/Manager_User.php';
+        $nom_film = new Manager_Film;
+        $donnee = $nom_film->recup_film();
+        foreach($donnee as $value) {
+          echo '<option>'.$value['film'].'</option>';
+        }
+       ?>
+  </br>
+    <input type="submit" value="Envoyer"/>
 
 
 <div class="wrapper"><a href="../index1.php" class="link2"><span><span>Retourne au menu principal</span></span></a></div>

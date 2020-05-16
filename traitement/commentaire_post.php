@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+require '../class/manager/Manager_Film.php';
+require '../class/manager/Manager_User.php';
     try {
         $connexionBDD = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
     } catch(Exception $ex) {
@@ -7,10 +9,10 @@
     }
 
     // On insère le message dans la BDD
-       $reqInsertMessage = $connexionBDD->prepare('INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES(?, ?, ?, NOW())');
-        $reqInsertMessage->execute(array($_POST['auteur'], $_POST['commentaire'], $_POST['id_billet']));
+       $reqInsertMessage = $connexionBDD->prepare('INSERT INTO commentaires(nom, commentaire, film, date_commentaire) VALUES(?, ?, ?, NOW())');
+      $a = $reqInsertMessage->execute(array($_SESSION['nom'], $_POST['commentaire'], $_POST['film']));
 
     // On redirige le visiteur vers la page
-    header('Location: ../view/article.php');
+    //header('Location: ../view/article.php');
 
 ?>
