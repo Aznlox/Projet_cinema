@@ -1,8 +1,10 @@
 <?php
 session_start();
 require '../class/manager/Manager_Film.php';
-require '../class/manager/Manager_User.php';
-    try {
+if(!isset($_SESSION['nom'])){
+  header('location:form_connexion.php?reserv=true');
+}
+try {
         $connexionBDD = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
     } catch(Exception $ex) {
         die('Erreur : '.$ex->getMessage());
@@ -13,6 +15,6 @@ require '../class/manager/Manager_User.php';
       $a = $reqInsertMessage->execute(array($_SESSION['nom'], $_POST['commentaire'], $_POST['film']));
 
     // On redirige le visiteur vers la page
-    //header('Location: ../view/article.php');
+    header('Location: ../view/article.php');
 
 ?>

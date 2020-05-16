@@ -28,7 +28,7 @@ date_default_timezone_set('Europe/Paris'); ?>
     </head>
 
     <body>
-      <h1><font color="red"> Disclaimer ! : A cause de quelque difficulté technique l'ajout de commentaire ne se fait que depuis la base de donnée</h1> </font>
+      <h1><font color="red"> Disclaimer ! : A cause de quelque difficulté technique la visibilité des commentaire ne se fait que dans la base de donnée</h1> </font>
         <h1>Espace commentaire !</h1>
 <?php
 // Connexion à la base de données
