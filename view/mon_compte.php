@@ -1,7 +1,7 @@
 <?php session_start();
 require '../class/manager/Manager_User.php';
 if(!isset($_SESSION['nom'])){
-  header('location:../index1.php');
+  header('location:../index.php');
 }
 else{
   $modif = new Manager_User;
@@ -36,12 +36,12 @@ else{
 <!-- HEADER -->
 			<div id="header">
 				<div class="row-1" "col-md-6">
-					<div class="fleft"><a href="../index1.php">Cinema <span>World</span></a></div>
+					<div class="fleft"><a href="../index.php">Cinema <span>World</span></a></div>
 
 			</div>
 				<div class="row-2">
 					<ul>
-						<li><a href="../index1.php">Home</a></li>
+						<li><a href="../index.php">Home</a></li>
             <li><a href="reservation.php">Réservation</a></li>
 						<li><a href="sitemap.php">Où nous trouver</a></li>
 						<?php

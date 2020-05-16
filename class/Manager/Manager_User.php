@@ -72,7 +72,7 @@ class Manager_User{
       if ($donnee['role'] == "admin"){
         $_SESSION['role'] = $donnee['role'];
       }
-      header('location: ../index1.php');
+      header('location: ../index.php');
     }
     else{
       $_SESSION['erreur_co'] = true;
@@ -95,7 +95,7 @@ class Manager_User{
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->prepare('UPDATE compte SET nom = ?, prenom = ? WHERE email = ?');
     $req->execute(array($modif->getNom(), $modif->getPrenom(), $email));
-    header('location: ../index1.php');
+    header('location: ../index.php');
     //actualisation du nom de l'utilisateur dans les pages
     $req = $bdd->prepare('SELECT nom from compte where email = ?');
     $req->execute(array($email));

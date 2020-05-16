@@ -25,7 +25,7 @@
 <!-- HEADER -->
 			<div id="header">
 				<div class="row-1" "col-md-6">
-					<div class="fleft"><a href="index1.php">Cinema <span>World</span></a></div>
+					<div class="fleft"><a href="index.php">Cinema <span>World</span></a></div>
 					<div class="row-1" "col-md-12">
 						<br>
 						<div><?php if(isset($_SESSION['nom'])){
@@ -41,7 +41,7 @@
 				<div class="row-2">
 
 					<ul>
-						<li><a href="../index1.php">Home</a></li>
+						<li><a href="../index.php">Home</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
 								echo '<li><a href="reservation.php">Réservation</a></li>';

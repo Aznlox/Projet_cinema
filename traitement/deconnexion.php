@@ -3,5 +3,5 @@
 
   //déconnexion de compte
   session_destroy();
-  header('location:../index1.php');
+  header('location:../index.php');
  ?>

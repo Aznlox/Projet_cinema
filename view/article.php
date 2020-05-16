@@ -73,6 +73,6 @@ catch(Exception $e)
     <input type="submit" value="Envoyer"/>
 
 
-<div class="wrapper"><a href="../index1.php" class="link2"><span><span>Retourne au menu principal</span></span></a></div>
+<div class="wrapper"><a href="../index.php" class="link2"><span><span>Retourne au menu principal</span></span></a></div>
 </body>
 </html>
