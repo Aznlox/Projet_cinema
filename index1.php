@@ -43,11 +43,7 @@
 				<div class="row-2">
 					<ul>
 						<li><a href="index1.php" class="active">Home</a></li>
-						<?php
-							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
-								echo '<li><a href="view/reservation.php">Réservation</a></li>';
-							}
-						?>
+						<li><a href="view/reservation.php">Réservation</a></li>;
 						<li><a href="view/sitemap.php">Où nous trouver</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){

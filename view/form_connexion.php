@@ -54,3 +54,12 @@ if(isset($_SESSION['erreur_co'])){
     <script src="../lib/js/main.js"></script>
 </body>
 </html>
+<?php
+  if(isset($_GET['reserv'])){
+    echo '<script>
+    alert("Veuillez vous connecter pour faire une réservation.");
+    window.location.href="form_connexion.php";
+    </script>';
+    unset($_SESSION['erreur_co']);
+  }
+?>

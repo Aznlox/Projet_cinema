@@ -147,7 +147,23 @@ class Manager_User{
     $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
     $req = $bdd->query('TRUNCATE TABLE reservation');
     echo '<script>
-    alert("Toutes les réservations on été supprimé.");
+    alert("Toutes les réservations ont été supprimé.");
+    window.location.href="manage_reserv.php"
+    </script>';
+  }
+
+  public function recup_reserv_user($email){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('SELECT * FROM reservation WHERE email = ?');
+    $donnee = $req->fetchall();
+    return $donnee;
+  }
+
+  public function suppr_reserv_user($email){
+    $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
+    $req = $bdd->prepare('DELETE FROM reservation where email = ?');
+    echo '<script>
+    alert("Toutes vos réservations ont été supprimé.");
     window.location.href="manage_reserv.php"
     </script>';
   }

@@ -3,6 +3,9 @@
 <?php
 session_start();
 require '../class/manager/Manager_Film.php';
+if(!isset($_SESSION['nom'])){
+  header('location:form_connexion.php?reserv=true');
+}
 $nom_film = new Manager_Film;
 $donnee = $nom_film->recup_film();
 

@@ -15,6 +15,7 @@ else{
 <title>Mon compte</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../lib/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../lib/css/tableau.css" rel="stylesheet" type="text/css">
 <script src="../lib/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <script src="../lib/js/cufon-yui.js" type="text/javascript"></script>
 <script src="../lib/js/cufon-replace.js" type="text/javascript"></script>
@@ -41,11 +42,7 @@ else{
 				<div class="row-2">
 					<ul>
 						<li><a href="../index1.php">Home</a></li>
-            <?php
-							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
-								echo '<li><a href="reservation.php">Réservation</a></li>';
-							}
-						?>
+            <li><a href="reservation.php">Réservation</a></li>
 						<li><a href="sitemap.php">Où nous trouver</a></li>
 						<?php
 							if(isset($_SESSION['nom']) && !isset($_SESSION['role'])){
@@ -84,6 +81,42 @@ else{
       						</div>
       						</fieldset>
       					</form>
+							</div>
+              <br>
+              <div class="inner">
+                <h1>Vos Réservation</h1><br>
+                <table>
+                <tr>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>nb personnes</th>
+                  <th>film</th>
+                  <th>date</th>
+                  <th>heure</th>
+                </tr>
+                <?php
+                  $manage_reserv = new Manager_User;
+                  $donnee = $manage_reserv->recup_reserv_user($_SESSION['email']);
+                  foreach($donnee as $value) {
+                    echo "<tr>
+                      <td>".$value['nom']."</td>
+                      <td>".$value['nb_pers']."</td>
+                      <td>".$value['film']."</td>
+                      <td>".$value['date']."</td>
+                      <td>".$value['heure']."</td>
+                    </tr>";
+                  }
+                  if(isset($_GET['suppr'])){
+                    $manage_reserv -> suppr_reserv_user($_SESSION['email']);
+                  }
+
+                 ?>
+                 </table>
+                 <br>
+                 <button class="link2" onclick="window.location='mon_compte.php?suppr=true'">
+                  <span>Supprimer vos réservations</span>
+                </button>
+                <br>
 							</div>
 						</div>
 					</div>
